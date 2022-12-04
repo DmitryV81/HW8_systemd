@@ -1,7 +1,10 @@
 Домашняя работа №8. Инициализация системы и systemd.
+
 Часть 1. Написать сервис, который будет раз в 30 секунд мониторить лог на предмет наличия ключевого слова. Файл и слово должны задаваться в
 /etc/sysconfig
+
 Ход работы:
+
 1. В каталоге /etc/sysconfig создаем файл watchlog, в котором находится конфигурация сервиса:
 ```
 [root@systemd ~]#cat /etc/sysconfig/watchlog 
@@ -86,7 +89,9 @@ Dec  4 20:13:08 systemd systemd: Started My watchlog service.
 ```
 
 Часть 2. Из epel установить spawn-fcgi и переписать init-скрипт на unit-файл. Имя сервиса должно также называться.
+
 Ход работы:
+
 1. Устанавливаем spawn-fcgi и необходимые для него пакеты:
 ```
  yum install epel-release -y && yum install spawn-fcgi php php-cli mod_fcgid httpd -y
@@ -168,7 +173,9 @@ Hint: Some lines were ellipsized, use -l to show in full.
 ```
 
 Часть 3. Дополнить юнит-файл apache httpd возможностью запустить несколько инстансов сервера с разными конфигами
+
 Ход работы:
+
 1. Вносим правки в шаблон в конфигурации файла окружения, который находится в каталоге /usr/lib/systemd/system. Изначально файл называется httpd.service. Переименуем его в httpd@service.
 ```
 [root@systemd ~]# cat /usr/lib/systemd/system/httpd@.service 
