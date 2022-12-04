@@ -273,6 +273,7 @@ PidFile /var/run/httpd-second.pid
 Listen 8080
 ```
 Часть вывода опущена.
+
 4. Проверяем:
 ```
 [root@systemd ~]# systemctl start httpd@first.service
