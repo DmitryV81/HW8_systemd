@@ -203,6 +203,7 @@ PrivateTmp=true
 WantedBy=multi-user.target
 ```
 В описании сервиса в строке EnvironmentFile=/etc/sysconfig/httpd-%i добавили спецификатор %i для подстановки имён инстансов.
+
 2. В каталоге  /etc/sysconfig создаём два файла окружения httpd-first и httpd-second, в которых задается опция для запуска веб-сервера с необходимым конфигурационным файлом:
 ```
 [root@systemd ~]# cat /etc/sysconfig/httpd-first 
